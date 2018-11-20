@@ -1,0 +1,22 @@
+C:\Users\Tech\GBC\Semester1\1007\Milestone2\Main.cpp: In function 'int main()':
+C:\Users\Tech\GBC\Semester1\1007\Milestone2\Main.cpp:27:18: error: use of deleted function 'Door::Door()'
+   Door doors[3]={};
+                  ^
+In file included from C:\Users\Tech\GBC\Semester1\1007\Milestone2\Main.cpp:2:0:
+C:\Users\Tech\GBC\Semester1\1007\Milestone2\Classes.h:15:7: note: 'Door::Door()' is implicitly deleted because the default definition would be ill-formed:
+ class Door : public LOTile{
+       ^~~~
+C:\Users\Tech\GBC\Semester1\1007\Milestone2\Classes.h:15:7: error: no matching function for call to 'LOTile::LOTile()'
+C:\Users\Tech\GBC\Semester1\1007\Milestone2\Classes.h:8:3: note: candidate: LOTile::LOTile(int, int)
+   LOTile(const int m_x, const int m_y){
+   ^~~~~~
+C:\Users\Tech\GBC\Semester1\1007\Milestone2\Classes.h:8:3: note:   candidate expects 2 arguments, 0 provided
+C:\Users\Tech\GBC\Semester1\1007\Milestone2\Classes.h:3:7: note: candidate: constexpr LOTile::LOTile(const LOTile&)
+ class LOTile{
+       ^~~~~~
+C:\Users\Tech\GBC\Semester1\1007\Milestone2\Classes.h:3:7: note:   candidate expects 1 argument, 0 provided
+C:\Users\Tech\GBC\Semester1\1007\Milestone2\Classes.h:3:7: note: candidate: constexpr LOTile::LOTile(LOTile&&)
+C:\Users\Tech\GBC\Semester1\1007\Milestone2\Classes.h:3:7: note:   candidate expects 1 argument, 0 provided
+C:\Users\Tech\GBC\Semester1\1007\Milestone2\Main.cpp:31:3: error: expected ';' before 'return'
+   return 0;
+   ^~~~~~
