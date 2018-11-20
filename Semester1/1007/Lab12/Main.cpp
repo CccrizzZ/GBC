@@ -24,7 +24,7 @@ void PassArray(Door d[], const int size) {
 
 int main() {
   LOTile test(6,2);
-  Door doors[3]={};
+  Door doors[3];
   PassArray(doors, 3);
   cout << doors[0].m_x << '\n';
   system("pause")

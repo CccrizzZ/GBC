@@ -1,0 +1,7 @@
+C:\Users\101193350\Desktop\GBC\Semester1\1001\Array4Employee.cpp: In function 'void sortEmployeesAZ(Employee*, int)':
+C:\Users\101193350\Desktop\GBC\Semester1\1001\Array4Employee.cpp:93:55: error: cannot convert 'std::__cxx11::string {aka std::__cxx11::basic_string<char>}' to 'const char*' for argument '1' to 'int strcmp(const char*, const char*)'
+       if (strcmp(list[i].getName(),list[i+1].getName())!=0) {
+                                                       ^
+C:\Users\101193350\Desktop\GBC\Semester1\1001\Array4Employee.cpp:95:61: error: cannot convert 'std::__cxx11::string {aka std::__cxx11::basic_string<char>}' to 'const char*' for argument '1' to 'int strcmp(const char*, const char*)'
+       }else if (strcmp(list[i].getName(),list[i+1].getName())>0) {
+                                                             ^
