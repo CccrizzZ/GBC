@@ -5,7 +5,7 @@ public:
   int m_x;
   int m_y;
 
-  LOTile(const int m_x, const int m_y){
+  LOTile(const int m_x=0, const int m_y=0){
     this -> m_x = m_x;
     this -> m_y = m_y;
   }

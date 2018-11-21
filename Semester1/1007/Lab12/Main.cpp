@@ -27,6 +27,6 @@ int main() {
   Door doors[3];
   PassArray(doors, 3);
   cout << doors[0].m_x << '\n';
-  system("pause")
+  system("pause");
   return 0;
 }
