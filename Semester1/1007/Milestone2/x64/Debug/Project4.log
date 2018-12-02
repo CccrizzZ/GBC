@@ -1,2 +1,1 @@
-﻿  Main.cpp
-  Project4.vcxproj -> C:\Users\crizz\Desktop\Milestone2\x64\Debug\Project4.exe
+﻿LINK : fatal error LNK1168: cannot open C:\Users\crizz\Documents\Git Repository\Semester1\1007\Milestone2\x64\Debug\Project4.exe for writing

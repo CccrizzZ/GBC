@@ -3,10 +3,14 @@
 #include <conio.h>
 using namespace std;
 
+
+
 class Sprite{
 public:
   char m_cOutput;
 };
+
+
 
 
 // Class foe Level Object
@@ -23,11 +27,15 @@ public:
 };
 
 
+
+
+
 class BGTile: public Sprite{
 public:
   char value;
   bool m_isObstacle;
   bool m_isHazard;
+  bool m_isDoor;
 
   void SetBGTile(const char x){
     this -> m_cOutput = x;
@@ -41,7 +49,15 @@ public:
     return m_isHazard;
   }
 
+  bool isDoor(){
+    return m_isDoor;
+  }
+
 };
+
+
+
+
 
 
 class Player: public LOTile{
@@ -86,8 +102,10 @@ public:
 
   void AddDoor(const int m_x, const int m_y, const int m_iToLevel, const int m_iDestX, const int m_iDestY) {
     if (m_iNumDoors < 3) {
-      doors[m_iNumDoors].SetDoor(m_x,m_y,m_iToLevel,m_iDestX,m_iDestY);
+      doors[m_iNumDoors++].SetDoor(m_x,m_y,m_iToLevel,m_iDestX,m_iDestY);
       m_iNumDoors++;
+    }else{
+      cout << "Can't add more doors!" << '\n';
     }
   }
 
