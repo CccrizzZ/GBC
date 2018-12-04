@@ -1,0 +1,7 @@
+﻿Main.obj : error LNK2005: "public: void __thiscall Game::clean(void)" (?clean@Game@@QAEXXZ) already defined in Game.obj
+Main.obj : error LNK2005: "public: void __thiscall Game::handleEvents(void)" (?handleEvents@Game@@QAEXXZ) already defined in Game.obj
+Main.obj : error LNK2005: "public: bool __thiscall Game::init(char const *,int,int,int,int,int)" (?init@Game@@QAE_NPBDHHHHH@Z) already defined in Game.obj
+Main.obj : error LNK2005: "public: void __thiscall Game::render(void)" (?render@Game@@QAEXXZ) already defined in Game.obj
+Main.obj : error LNK2005: "public: bool __thiscall Game::running(void)" (?running@Game@@QAE_NXZ) already defined in Game.obj
+Main.obj : error LNK2005: "public: void __thiscall Game::update(void)" (?update@Game@@QAEXXZ) already defined in Game.obj
+C:\Users\Tech\Desktop\M3\Debug\M3.exe : fatal error LNK1169: one or more multiply defined symbols found
