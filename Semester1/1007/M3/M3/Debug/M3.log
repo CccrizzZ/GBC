@@ -1,7 +1,4 @@
-﻿Main.obj : error LNK2005: "public: void __thiscall Game::clean(void)" (?clean@Game@@QAEXXZ) already defined in Game.obj
-Main.obj : error LNK2005: "public: void __thiscall Game::handleEvents(void)" (?handleEvents@Game@@QAEXXZ) already defined in Game.obj
-Main.obj : error LNK2005: "public: bool __thiscall Game::init(char const *,int,int,int,int,int)" (?init@Game@@QAE_NPBDHHHHH@Z) already defined in Game.obj
-Main.obj : error LNK2005: "public: void __thiscall Game::render(void)" (?render@Game@@QAEXXZ) already defined in Game.obj
-Main.obj : error LNK2005: "public: bool __thiscall Game::running(void)" (?running@Game@@QAE_NXZ) already defined in Game.obj
-Main.obj : error LNK2005: "public: void __thiscall Game::update(void)" (?update@Game@@QAEXXZ) already defined in Game.obj
-C:\Users\Tech\Desktop\M3\Debug\M3.exe : fatal error LNK1169: one or more multiply defined symbols found
+﻿  Main.cpp
+c:\users\crizz\documents\git repository\semester1\1007\m3\m3\game.h(181): warning C4715: 'DoorCollisionCheck': not all control paths return a value
+c:\users\crizz\documents\git repository\semester1\1007\m3\m3\game.h(197): warning C4715: 'CollisionCheck': not all control paths return a value
+  M3.vcxproj -> C:\Users\crizz\Documents\Git Repository\Semester1\1007\M3\Debug\M3.exe

@@ -1,0 +1,4 @@
+C:\Users\crizz\Documents\Git Repository\Semester1\1007\M3\M3\Game.h:5:23: fatal error: SDL_image.h: No such file or directory
+ #include "SDL_image.h"
+                       ^
+compilation terminated.
