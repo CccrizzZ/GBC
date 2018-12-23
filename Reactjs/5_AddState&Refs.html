@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <script src="css/1.css" charset="utf-8"></script>
+    <script src="js/react.min.js" ></script>
+    <script src="js/react-dom.min.js"></script>
+    <script src="js/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+  </head>
+  <body>
+
+    <div id="app">
+      <!--div for react component-->
+    </div>
+
+    <script type="text/babel">
+      // This is a component variable
+      var Comment = React.createClass({
+
+        // Initialize state
+        getInitialState: function () {
+          return {editing: false}
+        },
+
+        edit: function () {
+          this.setState({editing: true})
+        },
+
+        remove: function () {
+          alert("Removed!")
+        },
+
+        save: function () {
+          this.setState({editing: false})
+          alert("Saved!")
+          // Refs is a object holds all the refs and use .value to access the value of it
+          console.log(this.refs.editInput.value);
+        },
+
+        renderNormal: function () {
+          return (
+            <div className="card">
+              <h1>{this.props.children}</h1>
+              <button onClick={this.edit}>Edit</button>
+              <button onClick={this.remove}>Delete</button>
+            </div>
+          )
+        },
+
+        renderEditing: function () {
+          // ref isthe reference to this element
+          return (
+            <div className="card">
+              <h1>{this.props.children}</h1>
+              <textarea ref="editInput" defaultValue={this.props.children}></textarea>
+              <button onClick={this.save}>Save</button>
+            </div>
+          )
+        },
+
+
+        render: function () {
+          // If the editing state is true
+          if (this.state.editing) {
+            return this.renderEditing() // Display renderEditing
+          }else{
+            return this.renderNormal() // Else Display renderNormal
+          }
+        }
+      })
+
+
+      // Rendering the component to the div above
+      ReactDOM.render(
+        <div>
+          <Comment>Dragonfruit</Comment>
+          <Comment>Avacado</Comment>
+          <Comment>Banana</Comment>
+          <Comment>Blueberry</Comment>
+        </div>,
+        document.getElementById("app")
+      )
+
+
+
+      // Style sheet
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+.page{
+  background-color: #202020;
+}
+
+.title{
+  color: orange;
+}
+
+.text{
+  color: white;
+}
+
+.card{
+  background-color: #404040;
+  color: orange;
+  border-radius: 15px;
+}
+
+.remove{
+  background-color: red;
+  color: white;
+  border-radius: 15px;
+}

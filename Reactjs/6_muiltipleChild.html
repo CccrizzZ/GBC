@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <script src="css/1.css" charset="utf-8"></script>
+    <script src="js/react.min.js" ></script>
+    <script src="js/react-dom.min.js"></script>
+    <script src="js/browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+
+  </head>
+  <body>
+
+    <div id="app">
+      <!--div for react component-->
+    </div>
+
+    <script type="text/babel">
+      // This is the Comment componet
+      var Comment = React.createClass({
+
+        // initialization function
+        getInitialState: function () {
+          return {editing: false}
+        },
+
+        edit: function () {
+          this.setState({editing: true})
+        },
+
+        remove: function () {
+          alert("Removed!")
+        },
+
+        save: function () {
+          this.setState({editing: false})
+          alert("Saved!")
+          console.log(this.refs.editInput.value);
+        },
+
+        renderNormal: function () {
+          return (
+            <div className="card">
+              <h1>{this.props.children}</h1>
+              <button onClick={this.edit}>Edit</button>
+              <button onClick={this.remove}>Delete</button>
+            </div>
+          )
+        },
+
+        renderEditing: function () {
+          return (
+            <div className="card">
+              <h1>{this.props.children}</h1>
+              <textarea ref="editInput" defaultValue={this.props.children}></textarea>
+              <button onClick={this.save}>Save</button>
+            </div>
+          )
+        },
+
+
+        render: function () {
+          // If the editing state is true
+          if (this.state.editing) {
+            return this.renderEditing() // Display renderEditing
+          }else{
+            return this.renderNormal() // Else Display renderNormal
+          }
+        }
+      })
+
+
+
+
+
+
+      // This is the Board component
+      var Board = React.createClass({
+        // initialization function
+        getInitialState: function () {
+          return {
+            comments:[
+              'Bacon',
+              'Avacado',
+              'Apple',
+              'Pineapple',
+              'Kush',
+              'Beef',
+              'Blueberry'
+            ]
+          };
+        },
+
+        // rendering function
+        render: function () {
+          return (
+            <div>
+              {
+                this.state.comments.map(function(text,i){
+                  // key Is the identifier for childs
+                  return (<Comment key={i}>{text}</Comment>);
+                })
+              }
+            </div>
+          );
+        }
+      })
+
+      // Rendering the component to the div above
+      ReactDOM.render(
+        <Board />,
+        document.getElementById("app")
+      )
+
+
+
+      // Style sheet
+
+    </script>
+  </body>
+</html>
