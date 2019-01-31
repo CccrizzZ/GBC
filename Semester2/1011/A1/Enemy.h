@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -66,17 +67,24 @@ void Enemy::setDamage(int z) {
 class Orc : public Enemy {
 public:
   Orc();
-  virtual ~Orc(){};
+  ~Orc(){};
   // Actions
+  void Die();
   void Taunt();
   void NormalAtt();
 };
 
 // Orc Functions
 Orc::Orc(){
+  cout << "[An Orc Appears]" << '\n';
   setName("Orc");
   setHP(90);
   setDamage(40);
+}
+
+void Orc::Die(){
+  cout << '\n' << "Arrrrrr!!!!!" << '\n';
+  cout << "Orc died, Black Blood Dripped All Over the Grass......" << '\n' << '\n' ;
 }
 
 void Orc::Taunt() {
@@ -108,17 +116,24 @@ void Orc::NormalAtt(){
 class Murloc : public Enemy {
 public:
   Murloc();
-  virtual ~Murloc(){};
+  ~Murloc(){};
   // Actions
+  void Die();
   void Taunt();
   void NormalAtt();
 };
 
 // Murloc Functions
 Murloc::Murloc(){
+  cout << "[A Murloc Appears]" << '\n';
   setName("Murloc");
   setHP(60);
   setDamage(20);
+}
+
+void Murloc::Die(){
+  cout << '\n' << "Arrrrrr!!!!!" << '\n';
+  cout << "Murloc died, Purple Blood Dripped All Over the Shore......" << '\n' << '\n' ;
 }
 
 void Murloc::Taunt() {

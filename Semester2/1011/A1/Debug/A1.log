@@ -1,3 +1,36 @@
 ﻿  A1.cpp
-c:\users\crizz\documents\gbc\semester2\1011\a1\enemy.h(16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  A1.vcxproj -> C:\Users\crizz\Documents\GBC\Semester2\1011\A1\Debug\A1.exe
+c:\users\crizz\documents\gbc\semester2\1011\a1\enemy.h(17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\1011\a1\player.h(17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(64): error C3861: 'ForestOfMist': identifier not found
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(67): error C3861: 'BlackWaterFall': identifier not found
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(70): error C3861: 'TownPub': identifier not found
+c:\users\crizz\documents\gbc\semester2\1011\a1\loop.cpp(10): error C2065: 'newgame': undeclared identifier
+c:\users\crizz\documents\gbc\semester2\1011\a1\loop.cpp(11): error C2065: 'newgame': undeclared identifier
+c:\users\crizz\documents\gbc\semester2\1011\a1\loop.cpp(12): error C2065: 'newgame': undeclared identifier
+c:\users\crizz\documents\gbc\semester2\1011\a1\loop.cpp(13): error C2065: 'newgame': undeclared identifier
+c:\users\crizz\documents\gbc\semester2\1011\a1\loop.cpp(22): error C2065: 'Player1': undeclared identifier
+c:\users\crizz\documents\gbc\semester2\1011\a1\loop.cpp(31): error C2065: 'Player1': undeclared identifier
+c:\users\crizz\documents\gbc\semester2\1011\a1\loop.cpp(35): error C2065: 'Player1': undeclared identifier
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(9): error C2011: 'Game': 'class' type redefinition
+  c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(9): note: see declaration of 'Game'
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(25): error C2027: use of undefined type 'Game'
+  c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(9): note: see declaration of 'Game'
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(26): error C2065: 'pnam': undeclared identifier
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(27): error C2065: 'pprof': undeclared identifier
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(28): warning C4508: '{ctor}': function should return a value; 'void' return type assumed
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(30): error C2027: use of undefined type 'Game'
+  c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(9): note: see declaration of 'Game'
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(30): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(34): warning C4508: '{dtor}': function should return a value; 'void' return type assumed
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(36): error C2027: use of undefined type 'Game'
+  c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(9): note: see declaration of 'Game'
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(37): error C2065: 'pprof': undeclared identifier
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(40): error C2027: use of undefined type 'Game'
+  c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(9): note: see declaration of 'Game'
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(41): error C2065: 'pnam': undeclared identifier
+c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(44): error C2027: use of undefined type 'Game'
+  c:\users\crizz\documents\gbc\semester2\1011\a1\game.h(9): note: see declaration of 'Game'
+c:\users\crizz\documents\gbc\semester2\1011\a1\a1.cpp(15): error C2079: 'newgame' uses undefined class 'Game'
+c:\users\crizz\documents\gbc\semester2\1011\a1\a1.cpp(15): error C2065: 'x': undeclared identifier
+c:\users\crizz\documents\gbc\semester2\1011\a1\a1.cpp(15): error C2065: 'pro': undeclared identifier

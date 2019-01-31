@@ -1,0 +1,21 @@
+C:\Users\crizz\Documents\GBC\Semester2\1011\A1\Player.h:1:9: warning: #pragma once in main file
+ #pragma once
+         ^~~~
+C:\Users\crizz\Documents\GBC\Semester2\1011\A1\Player.h:54:6: error: prototype for 'void Player::setHP()' does not match any in class 'Player'
+ void Player::setHP() {
+      ^~~~~~
+C:\Users\crizz\Documents\GBC\Semester2\1011\A1\Player.h:28:8: error: candidate is: void Player::setHP(int)
+   void setHP(int h);
+        ^~~~~
+C:\Users\crizz\Documents\GBC\Semester2\1011\A1\Player.h:72:1: error: redefinition of 'Knight::Knight()'
+ Knight::Knight(){
+ ^~~~~~
+C:\Users\crizz\Documents\GBC\Semester2\1011\A1\Player.h:68:2: note: 'Knight::Knight()' previously defined here
+  Knight(){};
+  ^~~~~~
+C:\Users\crizz\Documents\GBC\Semester2\1011\A1\Player.h:80:1: error: redefinition of 'Knight::~Knight()'
+ Knight::~Knight(){
+ ^~~~~~
+C:\Users\crizz\Documents\GBC\Semester2\1011\A1\Player.h:69:2: note: 'virtual Knight::~Knight()' previously defined here
+  ~Knight(){};
+  ^
