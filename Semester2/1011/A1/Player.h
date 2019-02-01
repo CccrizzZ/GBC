@@ -14,7 +14,7 @@ private:
   int SpecialAttDamage;
 
 public:
-  Player (){srand (time(NULL));};
+  Player (){};
   virtual ~Player (){};
 
   // Getters

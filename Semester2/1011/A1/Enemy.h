@@ -15,7 +15,7 @@ private:
 public:
   // Seed For Rand() Fuction
   Enemy(){srand (time(NULL));};
-  virtual ~Enemy(){};
+  ~Enemy(){};
   // Getters
   string getName();
   int getHP();
@@ -88,7 +88,6 @@ void Orc::Die(){
 }
 
 void Orc::Taunt() {
-
   // Random number between 5-100
   // About 20% of chance first taunt will display
   // About 80% of chance second taunt will display
@@ -102,7 +101,6 @@ void Orc::Taunt() {
 void Orc::NormalAtt(){
   cout << "Baaaaam!!!!!!" << '\n';
   cout << "Your Lost 40 HP" << '\n';
-
 }
 
 

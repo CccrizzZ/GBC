@@ -42,11 +42,14 @@ string Game::getPnam(){
 }
 
 void Game::runGame(){
+
   // Flag For Game Running
   bool running = true;
   while (running) {
     char input;
     cout << '\n' << "------------------------" << '\n';
+    cout << "Your name: " << pnam << '\n';
+    cout << "Your Profession: " << pprof << '\n';
     cout << "Where Do You Wanna Go?" << '\n';
     cout << "1. Forest of Mist" << '\n';
     cout << "2. Black Waterfall" << '\n';
