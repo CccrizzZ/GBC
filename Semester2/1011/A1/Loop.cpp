@@ -136,7 +136,7 @@ void TownPub() {
     cout << "------------------------" << '\n';
     cout << "Choose Your Drink: " << '\n';
     cout << "1. Malt Beer" << '\n';
-    cout << "1. Shot of Whisky" << '\n';
+    cout << "2. Shot of Whisky" << '\n';
     cout << "Press \"E\" To Go Back In Town" << '\n';
     cout << "------------------------" << '\n' << '\n';
     input = _getch();
