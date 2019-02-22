@@ -1,4 +1,4 @@
 ﻿  Main.cpp
-c:\users\crizz\documents\git repository\semester1\1007\m3\m3\game.h(181): warning C4715: 'DoorCollisionCheck': not all control paths return a value
-c:\users\crizz\documents\git repository\semester1\1007\m3\m3\game.h(197): warning C4715: 'CollisionCheck': not all control paths return a value
-  M3.vcxproj -> C:\Users\crizz\Documents\Git Repository\Semester1\1007\M3\Debug\M3.exe
+c:\users\crizz\documents\gbc\semester1\1007\m3\m3\game.h(181): warning C4715: 'DoorCollisionCheck': not all control paths return a value
+c:\users\crizz\documents\gbc\semester1\1007\m3\m3\game.h(197): warning C4715: 'CollisionCheck': not all control paths return a value
+  M3.vcxproj -> C:\Users\crizz\Documents\GBC\Semester1\1007\M3\Debug\M3.exe
