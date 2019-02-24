@@ -39,14 +39,6 @@ public:
 	// SDL shit
 	SDL_Window* Window;
 	SDL_Renderer* Renderer;
-	SDL_Surface* PlayerSurface;
-	SDL_Surface* EnemySurface;
-	SDL_Surface* BulletSurface;
-	SDL_Surface* BGSurface;
-	SDL_Texture* PlayerTexture;
-	SDL_Texture* EnemyTexture;
-	SDL_Texture* BulletTexture;
-	SDL_Texture* BGTexture;
 
 	// Functions
 	Game (){};
