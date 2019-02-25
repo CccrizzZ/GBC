@@ -1,0 +1,6 @@
+<Root>
+    <GameObject class="Box" xpos="100" ypos="100" w="100" h="100" r="0" g="0" b="255"/>
+    <GameObject class="Box" xpos="800" ypos="100" w="100" h="100" r="0" g="120" b="255"/>
+    <GameObject class="Box" xpos="100" ypos="500" w="100" h="100" r="255" g="255" b="0"/>
+    <GameObject class="Box" xpos="800" ypos="500" w="100" h="100" r="0" g="255" b="0"/>
+</Root>

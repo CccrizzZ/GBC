@@ -1,0 +1,12 @@
+﻿  Box.cpp
+c:\users\crizz\desktop\pe4\sdl_template32\game.h(109): warning C4018: '<': signed/unsigned mismatch
+c:\users\crizz\desktop\pe4\sdl_template32\game.h(134): warning C4018: '<': signed/unsigned mismatch
+c:\users\crizz\desktop\pe4\sdl_template32\game.h(175): warning C4018: '<': signed/unsigned mismatch
+c:\users\crizz\desktop\pe4\sdl_template32\game.h(185): warning C4018: '<': signed/unsigned mismatch
+  Main.cpp
+c:\users\crizz\desktop\pe4\sdl_template32\game.h(109): warning C4018: '<': signed/unsigned mismatch
+c:\users\crizz\desktop\pe4\sdl_template32\game.h(134): warning C4018: '<': signed/unsigned mismatch
+c:\users\crizz\desktop\pe4\sdl_template32\game.h(175): warning C4018: '<': signed/unsigned mismatch
+c:\users\crizz\desktop\pe4\sdl_template32\game.h(185): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  SDL_Template32.vcxproj -> C:\Users\crizz\Desktop\PE4\Debug\SDL_Template32.exe
