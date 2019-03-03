@@ -109,9 +109,6 @@ int main(int argc, char* args[]) {
 			myElement->QueryIntAttribute("b", &blue);
 
 			// Create Boxes Object
-
-
-
 			myBoxes.push_back(new Box({b_xpos, b_ypos, b_w, b_h,}, red, green, blue));
 		}
 		myElement = myElement -> NextSiblingElement("GameObject");
