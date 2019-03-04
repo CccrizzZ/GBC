@@ -17,8 +17,8 @@ int main() {
 
 
   SortableArray<int> numbers(99);
-  std::cout << numbers.getSize() << '\n';
-
+  cout << numbers.getSize() << '\n';
+  cout << "" << '\n';
 
   // // Flag for user input
   // bool input = true;
