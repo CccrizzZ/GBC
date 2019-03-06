@@ -6,26 +6,26 @@ using namespace std;
 template <class T>
 class Array {
 private:
-  T *aptr;
-  int arraySize;
 
 public:
+  T *aptr;
+  int arraySize;
   // Constructor
   Array(int s){
     // Set size
     arraySize = s;
-    
+
     // point the T pointer to a new T type array
     aptr = new T [s];
 
     for (int i = 0; i < arraySize; i++) {
-      aprt
+      aptr[i] = rand() % 100 - 1;
     }
-
-    // Copy everything into T pointer
-    for (int i = 0; i < arraySize; i++) {
-      aptr[arraySize] = T();
-    }
+    //
+    // // Copy everything into T pointer
+    // for (int i = 0; i < arraySize; i++) {
+    //   aptr[arraySize] = T();
+    // }
   }
 
   // Return size
@@ -45,7 +45,7 @@ public:
   SortableArray(int s) : Array<T>(s){};
 
   void printArr() {
-    for (int i = 0; i < arraySize; i++) {
+    for (int i = 0; i < getSize(); i++) {
       cout << aptr[i] << '\n';
     }
   }

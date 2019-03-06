@@ -106,18 +106,18 @@ void GameState::Update(){
 	}
 
 	// Trigger sounds
-	// if (Game::Instance()->KeyDown(SDL_SCANCODE_L) == 1){
-	// 	Game::Instance()->GetAM()->PlaySound(sfx::pickup);
-	// }
-	// if (Game::Instance()->KeyDown(SDL_SCANCODE_K) == 1){
-	// 	Game::Instance()->GetAM()->PlaySound(sfx::death);
-	// }
-	// if (Game::Instance()->KeyDown(SDL_SCANCODE_J) == 1){
-	// 	Game::Instance()->GetAM()->PlaySound(sfx::door);
-	// }
-	// if (Game::Instance()->KeyDown(SDL_SCANCODE_H) == 1){
-	// 	Game::Instance()->GetAM()->PlaySound(sfx::win);
-	// }
+	if (Game::Instance()->KeyDown(SDL_SCANCODE_L) == 1){
+		Game::Instance()->GetAM()->PlaySound(sfx::pickup);
+	}
+	if (Game::Instance()->KeyDown(SDL_SCANCODE_K) == 1){
+		Game::Instance()->GetAM()->PlaySound(sfx::death);
+	}
+	if (Game::Instance()->KeyDown(SDL_SCANCODE_J) == 1){
+		Game::Instance()->GetAM()->PlaySound(sfx::door);
+	}
+	if (Game::Instance()->KeyDown(SDL_SCANCODE_H) == 1){
+		Game::Instance()->GetAM()->PlaySound(sfx::win);
+	}
 
 
 
