@@ -4,14 +4,19 @@ using namespace std;
 template <class T>
 class Search {
 public:
-  int size;
-  int sorted[1000];
+  int arraySize;
+  T *aptr;
+
   int max;
   int min;
-  Search (int a[], int x){
-    size = x;
-    for (int i = 0; i < size; i++) {
-      sorted[i] = a[i];
+
+  Search (T a[]){
+    arraySize = sizeof(a)/sizeof(a[0]);
+
+    aptr = new T [arraySize];
+
+    for (int i = 0; i < arraySize; i++) {
+      aptr[i] = a[i];
     }
   }
   ~Search (){};
@@ -22,8 +27,8 @@ public:
     bool found = false;
     bool notfound = true;
     while (found == false) {
-      for (int i = 0; i < size; i++) {
-        if (sorted[i] == l) {
+      for (int i = 0; i < arraySize; i++) {
+        if (aptr[i] == l) {
           cout << "Element " << l << " is the " << i+1 << "th element in this aray" << '\n' << '\n';
           found = true;
           notfound = false;
@@ -41,18 +46,18 @@ public:
   // Binary Search
   void BinarySearch(int b){
     min = 0;
-    max = size - 1;
+    max = arraySize - 1;
     int mid;
     bool flag = true;
     bool found = false;
 
     while (min <= max && flag) {
       mid = (max + min)/2;
-      if (b == sorted[mid]) {
+      if (b == aptr[mid]) {
         cout << "Element " << b << " is the " << mid+1 << "th element in this aray" << '\n' << '\n';
         flag = false;
         found = true;
-      }else if (sorted[mid] > b) {
+      }else if (aptr[mid] > b) {
         max = mid - 1;
       }else{
         min = min + 1;

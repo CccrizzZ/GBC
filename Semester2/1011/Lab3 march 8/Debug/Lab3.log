@@ -1,6 +1,3 @@
 ﻿  Lab3.cpp
-c:\users\101193350\desktop\gbc\semester2\1011\lab3 march 8\array.h(48): error C3861: 'getSize': identifier not found
-  c:\users\101193350\desktop\gbc\semester2\1011\lab3 march 8\array.h(48): note: 'getSize': function declaration must be available as none of the arguments depend on a template parameter
-  c:\users\101193350\desktop\gbc\semester2\1011\lab3 march 8\array.h(52): note: see reference to class template instantiation 'SortableArray<T>' being compiled
-c:\users\101193350\desktop\gbc\semester2\1011\lab3 march 8\array.h(49): error C3861: 'aptr': identifier not found
-c:\users\101193350\desktop\gbc\semester2\1011\lab3 march 8\lab3.cpp(16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\tech\desktop\gbc\semester2\1011\lab3 march 8\lab3.cpp(16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Lab3.vcxproj -> C:\Users\Tech\Desktop\GBC\Semester2\1011\Lab3 march 8\Debug\Lab3.exe
