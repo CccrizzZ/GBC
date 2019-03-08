@@ -1,3 +1,3 @@
 ﻿  Lab3.cpp
-c:\users\crizz\desktop\lab3\lab3.cpp(16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Lab3.vcxproj -> C:\Users\crizz\Desktop\Lab3\Debug\Lab3.exe
+c:\users\tech\desktop\gbc\semester2\1011\lab3 march 8\lab3.cpp(16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Lab3.vcxproj -> C:\Users\Tech\Desktop\GBC\Semester2\1011\Lab3 march 8\Debug\Lab3.exe

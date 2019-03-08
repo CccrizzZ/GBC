@@ -8,17 +8,24 @@ class Sort {
 public:
   int size;
   // Array populated with random numbers
-  int arr[1000];
+  T *aptr;
   // BubbleSort temp
   int Btemp;
 
   // Constructor
   Sort();
-  Sort(int x){
-    size = x;
+  Sort(T a[]){
+    size = sizeof(a)/sizeof(a[0]);
+
+    aptr = new T [size];
+
+    for (int i = 0; i < size; i++) {
+      aptr[i] = a[i];
+    }
+
     // Automatically populate the array with random numbers between 1-1000
-    for (int i = 0; i <= x; i++) {
-      arr[i] = rand() % 1000 + 1;
+    for (int i = 0; i <= size; i++) {
+      aptr[i] = rand() % 1000 + 1;
     }
   }
   ~Sort(){};
@@ -26,9 +33,9 @@ public:
 
   // Print out the array
   void getArray(){
-    cout << '\n' << "Number array generated: { ";
+    cout << '\n' << "Array generated: { ";
     for (int i = 0; i < size; i++) {
-      cout << arr[i] << " ";
+      cout << aptr[i] << " ";
     }
     cout << "}" << '\n' << '\n';
   }
@@ -38,15 +45,23 @@ public:
   void BubbleSort(){
     for (int i = 0; i <= size; i++) {
       for (int j = 0; j < size; j++) {
-        if (arr[j]>arr[j+1]) {
-          // Swap arr[j] and arr[j+1]
-          Btemp = arr[j];
-          arr[j] = arr[j+1];
-          arr[j+1] = Btemp;
+        if (aptr[j]>aptr[j+1]) {
+          // Swap aptr[j] and aptr[j+1]
+          Btemp = aptr[j];
+          aptr[j] = aptr[j+1];
+          aptr[j+1] = Btemp;
         }
       }
     }
   }
+
+
+
+
+
+
+
+
 
 
 
@@ -105,7 +120,7 @@ public:
 
   // MergeSort the auto populated array in one parameterless function
   void Msort() {
-    MergeSort(arr, 0, size-1);
+    MergeSort(aptr, 0, size-1);
   }
 
 };
