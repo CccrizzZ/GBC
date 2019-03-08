@@ -1,0 +1,14 @@
+#pragma once
+#include "Game.h"
+
+class DemoProjectGame : public Game{
+public:
+	DemoProjectGame();
+	~DemoProjectGame();
+
+	void Awake();
+	void Setup();
+
+	void EnemyPrefab(GameObject* enemy);
+
+};
