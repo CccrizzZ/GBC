@@ -53,9 +53,11 @@ public:
 	void Enter();
 	void Exit();
 	void Resume() { cout << "Resuming Game..." << '\n'; }
+	
 	// Sound effect
 	enum sfx { pickup, death, door };
 
+	// Win bool and point counter
 	bool isWon;
 	int currPoints;
 
@@ -76,7 +78,7 @@ public:
 	bool BuildMap(Level& l, const char* n, SDL_Renderer* r, SDL_Texture* t);
 	void rendermap(Level& l, Player& p, int c);
 
-
+	// Items obj for all level
 	Item i1;
 	Item i2;
 	Item i3;

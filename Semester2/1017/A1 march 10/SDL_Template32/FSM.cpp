@@ -249,32 +249,24 @@ void GameState::Update(){
 		Game::Instance()->GetFSM()->ChangeState(new WinState());
 	}
 
-	if (p.m_rDst.x == i1.m_rDst.x && p.m_rDst.y == i1.m_rDst.y) {
+
+	// Play sound if item got pick up
+	if (p.m_rDst.x == i1.m_rDst.x && p.m_rDst.y == i1.m_rDst.y && currLevel==0) {
 		Game::Instance()->GetAM()->PlaySound(sfx::pickup);
 		currPoints+=1;
-	}else if (p.m_rDst.x == i2.m_rDst.x && p.m_rDst.y == i2.m_rDst.y) {
+	}else if (p.m_rDst.x == i2.m_rDst.x && p.m_rDst.y == i2.m_rDst.y && currLevel == 1) {
 		Game::Instance()->GetAM()->PlaySound(sfx::pickup);
 		currPoints+=1;
-	}else if (p.m_rDst.x == i3.m_rDst.x && p.m_rDst.y == i3.m_rDst.y) {
+	}else if (p.m_rDst.x == i3.m_rDst.x && p.m_rDst.y == i3.m_rDst.y && currLevel == 2) {
 		Game::Instance()->GetAM()->PlaySound(sfx::pickup);
 		currPoints+=1;
-	}else if (p.m_rDst.x == i4.m_rDst.x && p.m_rDst.y == i4.m_rDst.y) {
+	}else if (p.m_rDst.x == i4.m_rDst.x && p.m_rDst.y == i4.m_rDst.y && currLevel == 3) {
 		Game::Instance()->GetAM()->PlaySound(sfx::pickup);
 		currPoints+=1;
-	}else if (p.m_rDst.x == i5.m_rDst.x && p.m_rDst.y == i5.m_rDst.y) {
+	}else if (p.m_rDst.x == i5.m_rDst.x && p.m_rDst.y == i5.m_rDst.y && currLevel == 4) {
 		Game::Instance()->GetAM()->PlaySound(sfx::pickup);
 		currPoints+=1;
 	}
-
-
-
-
-
-
-	// if (Game::Instance()->KeyDown(SDL_SCANCODE_H) == 1){
-	// 	Game::Instance()->GetAM()->PlaySound(sfx::win);
-	// }
-
 
 
 
@@ -366,6 +358,7 @@ void PauseState::Update(){
 }
 
 void PauseState::Render(){
+	// Render gray color for pause screen
 	SDL_SetRenderDrawColor(Game::Instance()->GetRenderer(), 40, 40, 40, 255);
 	SDL_RenderClear(Game::Instance()->GetRenderer());
 	State::Render();
@@ -373,6 +366,7 @@ void PauseState::Render(){
 
 void PauseState::Exit(){
 	cout << "Exiting Pause..." << '\n';
+	// ToggleMusic
 	Game::Instance()->GetAM()->ToggleMusic();
 }
 
@@ -396,6 +390,8 @@ void WinState::Enter(){
 	// Load logo
 	wSurf = IMG_Load("img/won.png");
 	wText = SDL_CreateTextureFromSurface(Game::Instance()->GetRenderer(), wSurf);
+
+	// Load button
 	wButtons.push_back(new Button("img/menu.png", { 312,450,400,100 }));
 
 
@@ -403,10 +399,10 @@ void WinState::Enter(){
 
 void WinState::Update(){
 	// Logo size and position
-	wdestR.h = 326;
-	wdestR.w = 418;
-	wdestR.x = 303;
-	wdestR.y = 50;
+	wdestR.h = 100;
+	wdestR.w = 800;
+	wdestR.x = 112;
+	wdestR.y = 200;
 
 	// Button Update
 	for (int i = 0; i < (int)wButtons.size(); i++){
@@ -423,13 +419,16 @@ void WinState::Render(){
 	// Set background to white
 	SDL_SetRenderDrawColor(Game::Instance()->GetRenderer(), 255, 255, 255, 255);
 	SDL_RenderClear(Game::Instance()->GetRenderer());
-	for (int i = 0; i < (int)wButtons.size(); i++){
-		wButtons[i]->Render();
-	}
+
 	// Renders the title logo
 	SDL_RenderCopy(Game::Instance()->GetRenderer(), wText, NULL, &wdestR);
 
-	State::Render();  // SDL_RenderPresent
+	// Render all the buttons
+	for (int i = 0; i < (int)wButtons.size(); i++){
+		wButtons[i]->Render();
+	}
+
+	State::Render();  // <- this is SDL_RenderPresent
 }
 
 void WinState::Exit(){
