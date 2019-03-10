@@ -3,15 +3,15 @@
 #include "SDL.h"
 #include "SDL_image.h"
 #define OTILES 8
-#define HTILES 1
+#define HTILES 2
 #define ROWS 24
 #define COLS 32
 using namespace std;
 
 /* ',', ';', 'M', 'm', '.', '-', '~', 'X',
-   '#', 'O', '=', 'H', 'B', '_', 'Q', '%' */
+'#', 'O', '=', 'H', 'B', '_', 'Q', '%' */
 constexpr char g_cOTiles[OTILES] = { 'M', 'm', '#', 'O', '=', 'H', 'B', '%' };
-constexpr char g_cHTiles[HTILES] = { 'X' };
+constexpr char g_cHTiles[HTILES] = { 'X', '~' };
 
 class Sprite {
 public:
@@ -127,6 +127,8 @@ public:
 
 
 
+
+
 // Player Class
 class Player : public LOTile {
 public:
@@ -142,6 +144,22 @@ public:
 		m_cOutput = '@';
 		SetImage(r, t);
 		m_rSrc = { 0, 0, 32, 32 };
+		m_rDst.w = m_rDst.h = 32;
+	}
+};
+
+
+
+// Item Class
+class Item : public LOTile {
+public:
+
+
+	// Constructor
+	Item(){}
+	Item(int x, int y, SDL_Renderer* r, SDL_Texture* t) : LOTile(x, y){
+		SetImage(r, t);
+		m_rSrc = { 96, 96, 32, 32 };
 		m_rDst.w = m_rDst.h = 32;
 	}
 };
@@ -176,6 +194,7 @@ public:
 		m_rDst.w = m_rDst.h = 32;
 	}
 };
+
 
 
 
@@ -225,4 +244,6 @@ public:
 			cout << "Cannot add door. Limit reached." << '\n';
 		}
 	}
+
+
 };

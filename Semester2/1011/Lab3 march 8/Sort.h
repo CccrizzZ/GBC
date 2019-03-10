@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include "InventoryItem.h"
 using namespace std;
 
 
@@ -15,17 +16,21 @@ public:
   // Constructor
   Sort();
   Sort(T a[]){
-    size = sizeof(a)/sizeof(a[0]);
+    if (is_same<T,int>::value) {
+      size = sizeof(a)/sizeof(a[0]);
 
-    aptr = new T [size];
+      aptr = new T [size];
 
-    for (int i = 0; i < size; i++) {
-      aptr[i] = a[i];
-    }
+      for (int i = 0; i < sizeof(a)/sizeof(a[0]); i++) {
+        aptr[i] = a[i];
+      }
+      // Automatically populate the array with random numbers between 1-1000
+      for (int i = 0; i < sizeof(a)/sizeof(a[0]); i++) {
+        aptr[i] = rand() % 1000 + 1;
+      }
+    }else if (is_same<T,InventoryItem>::value) {
+      size = sizeof(a)/sizeof(a[0]);
 
-    // Automatically populate the array with random numbers between 1-1000
-    for (int i = 0; i <= size; i++) {
-      aptr[i] = rand() % 1000 + 1;
     }
   }
   ~Sort(){};
@@ -33,11 +38,15 @@ public:
 
   // Print out the array
   void getArray(){
-    cout << '\n' << "Array generated: { ";
-    for (int i = 0; i < size; i++) {
-      cout << aptr[i] << " ";
+    if (is_same<T,int>::value) {
+      cout << '\n' << "Array generated: { ";
+      for (int i = 0; i < sizeof(aptr)/sizeof(aptr[0]); i++) {
+        cout << aptr[i] << " ";
+      }
+      cout << "}" << '\n' << '\n';
+    }else if (is_same<T,InventoryItem>::value) {
+      std::cout << "Inventory" << '\n';
     }
-    cout << "}" << '\n' << '\n';
   }
 
 

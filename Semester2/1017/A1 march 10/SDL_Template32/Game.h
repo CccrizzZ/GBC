@@ -109,7 +109,7 @@ public:
 		auto duration = steady_clock::now().time_since_epoch();
 		auto count = duration_cast<microseconds>(duration).count();
 		int tick = 1000000 / 60;
-		if (count % tick == 0){
+		if (count % tick != 0){
 			if (m_bGotTick == false){
 				m_bGotTick = true;
 				return true;

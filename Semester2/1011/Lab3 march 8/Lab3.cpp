@@ -19,8 +19,6 @@ int main() {
   // Flag for user input
   bool input = true;
 
-  // Size of array
-  int aSize;
 
   while (input) {
     cout << "1.Create a number array" << '\n';
@@ -31,6 +29,8 @@ int main() {
     switch (x) {
       case '1':
         cout << "Please enter the size for the new number array:" << '\n';
+        // Size of array
+        int aSize;
         cin >> aSize;
         if (aSize>1000) {
           aSize=0;
@@ -70,8 +70,7 @@ int main() {
           cout << "Press any key to go back" << '\n';
           int x = _getch();
           if (x == 'Q' || x== 'q') {
-            // // Ill just pass the array we sorted above to the search class
-            // // to search you have to sort first
+
             // Search<int> search(s.arr, aSize);
             // cout << "Please enter querying content" << '\n';
             // int q;
@@ -96,9 +95,14 @@ int main() {
         }
       break;
       case '2':
+
         cout << "Please enter the size for the new inventory item array:" << '\n';
         cin >> aSize;
-
+        if (aSize>1000) {
+          aSize=0;
+          cout << "Array size should below 1000" << '\n';
+          break;
+        }
       break;
       case 'E':
       case 'e':
