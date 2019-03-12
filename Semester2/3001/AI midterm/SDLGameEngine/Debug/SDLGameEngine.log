@@ -1,0 +1,10 @@
+﻿  MidtermScene.cpp
+  PathFollowing.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\pathfollowing.cpp(22): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\pathfollowing.cpp(80): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Scene1.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\scene1.cpp(100): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  Shooter.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\shooter.cpp(84): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  Generating Code...
+  SDLGameEngine.vcxproj -> C:\Users\crizz\Documents\GBC\Semester2\3001\AI midterm\Debug\SDLGameEngine.exe
