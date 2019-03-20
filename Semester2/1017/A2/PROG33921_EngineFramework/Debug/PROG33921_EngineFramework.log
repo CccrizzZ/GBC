@@ -1,0 +1,8 @@
+﻿  AudioManager.cpp
+  Button.cpp
+  FSM.cpp
+  Game.cpp
+  Main.cpp
+  Sprites.cpp
+  Generating Code...
+LINK : fatal error LNK1104: cannot open file 'SDL2_ttf.lib'
