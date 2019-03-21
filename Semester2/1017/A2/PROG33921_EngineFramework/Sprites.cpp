@@ -4,78 +4,74 @@
 #include "Sprites.h"
 using namespace std;
 
-AnimatedSprite::AnimatedSprite(double x, double y, double a, int fm, int sm, double spd,
-	SDL_Rect s, SDL_Rect d): Sprite(s, d), m_X(x), m_Y(y), m_dAngle(a), m_iFrameMax(fm), 
-	m_iSpriteMax(sm), m_dSpeed(spd) {}
+AnimatedSprite::AnimatedSprite(double x, double y, double a, int fm, int sm, double spd, SDL_Rect s, SDL_Rect d)
+ : Sprite(s, d), m_X(x), m_Y(y), m_dAngle(a), m_iFrameMax(fm), m_iSpriteMax(sm), m_dSpeed(spd) {}
 
-void AnimatedSprite::Animate()
-{
+void AnimatedSprite::Animate(){
 	m_iFrame++;
-	if (m_iFrame == m_iFrameMax)
-	{
+	if (m_iFrame == m_iFrameMax){
 		m_iFrame = 0;
 		m_iSprite++;
-		if (m_iSprite == m_iSpriteMax)
-		{
+		if (m_iSprite == m_iSpriteMax){
 			m_iSprite = 0;
-			if (m_rSrc.y == 64)
+			if (m_rSrc.y == 64){
 				m_rSrc.y = -64;
+			}
 		}
 	}
 }
 
-void AnimatedSprite::Render()
-{
-	SDL_RenderCopyEx(Game::Instance()->GetRenderer(), Game::Instance()->GetSprTexture(),
-		&m_rSrc, &m_rDst, m_dAngle, nullptr, SDL_FLIP_NONE);
+void AnimatedSprite::Render(){
+	SDL_RenderCopyEx(Game::Instance()->GetRenderer(), Game::Instance()->GetSprTexture(), &m_rSrc, &m_rDst, m_dAngle, nullptr, SDL_FLIP_NONE);
 }
 
-void AnimatedSprite::UpdateDst()
-{
+void AnimatedSprite::UpdateDst(){
 	m_rDst.x = (int)(m_X - m_rDst.w / 2);
 	m_rDst.y = (int)(m_Y - m_rDst.h / 2);
 }
 
 Player::Player(double x, double y):
-	AnimatedSprite(x+32, y+32, 90, 3, 4, 6.0f, { 0, 0, 64, 64 }, { (int)x, (int)y, 64, 64 })
-{
+	AnimatedSprite(x + 32, y + 32, 90, 3, 4, 6.0f, { 0, 0, 64, 64 }, { (int)x, (int)y, 64, 64 }){
 	m_bIsDead = false;
 	m_iDeathCtr = 0;
 	m_iDeathCtrMax = 60;
 	m_dRadius = 18;
 }
 
-void Player::Update()
-{
+void Player::Update(){
 	this->Animate();
-	m_rSrc.x = m_rSrc.w * m_iSprite; // Update animation.
-	if (m_bIsDead)
+
+	// Update animation.
+	m_rSrc.x = m_rSrc.w * m_iSprite;
+
+	if (m_bIsDead){
 		return;
-	if (Game::Instance()->KeyDown(SDL_SCANCODE_A) && m_X > 32)
+	}
+	if (Game::Instance()->KeyDown(SDL_SCANCODE_A) && m_X > 32){
 		m_X -= m_dSpeed;
-	else if (Game::Instance()->KeyDown(SDL_SCANCODE_D) && m_X < 992)
+	}
+	else if (Game::Instance()->KeyDown(SDL_SCANCODE_D) && m_X < 992){
 		m_X += m_dSpeed;
-	if (Game::Instance()->KeyDown(SDL_SCANCODE_W))
+	}
+	if (Game::Instance()->KeyDown(SDL_SCANCODE_W)){
 		m_Y -= m_dSpeed;
-	else if (Game::Instance()->KeyDown(SDL_SCANCODE_S))
+	}
+	else if (Game::Instance()->KeyDown(SDL_SCANCODE_S)){
 		m_Y += m_dSpeed;
+	}
 	this->UpdateDst(); // Send x and y to dest rectangle.
 }
 
-void Player::Render()
-{
+void Player::Render(){
 	this->AnimatedSprite::Render(); // Invoking base class Render().
 }
 
-Asteroid::Asteroid(double x, double y, double a, double r)
-	:AnimatedSprite(x+32, y+32, a, 0, 0, 0.0f, { 0, 128, 64, 64 }, { (int)x, (int)y, 64, 64 })
-{
+Asteroid::Asteroid(double x, double y, double a, double r) : AnimatedSprite(x+32, y+32, a, 0, 0, 0.0f, { 0, 128, 64, 64 }, { (int)x, (int)y, 64, 64 }){
 	m_dRadius = 18;
 	m_dRotSpeed = r;
 }
 
-void Asteroid::Update()
-{
+void Asteroid::Update(){
 	m_X -= 1;
 	this->UpdateDst();
 	m_dAngle += m_dRotSpeed;
