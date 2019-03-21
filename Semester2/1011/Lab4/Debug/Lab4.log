@@ -1,0 +1,5 @@
+﻿  main.cpp
+c:\users\crizz\documents\gbc\semester2\1011\lab4\main.cpp(49): error C2228: left of '.length' must have class/struct/union
+  c:\users\crizz\documents\gbc\semester2\1011\lab4\main.cpp(49): note: type is 'std::string []'
+  c:\users\crizz\documents\gbc\semester2\1011\lab4\main.cpp(49): note: did you intend to use '->' instead?
+c:\users\crizz\documents\gbc\semester2\1011\lab4\main.cpp(49): error C2133: 'temp': unknown size
