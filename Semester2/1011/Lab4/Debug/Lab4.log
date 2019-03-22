@@ -1,5 +1,3 @@
 ﻿  main.cpp
-c:\users\crizz\documents\gbc\semester2\1011\lab4\main.cpp(49): error C2228: left of '.length' must have class/struct/union
-  c:\users\crizz\documents\gbc\semester2\1011\lab4\main.cpp(49): note: type is 'std::string []'
-  c:\users\crizz\documents\gbc\semester2\1011\lab4\main.cpp(49): note: did you intend to use '->' instead?
-c:\users\crizz\documents\gbc\semester2\1011\lab4\main.cpp(49): error C2133: 'temp': unknown size
+c:\users\crizz\documents\gbc\semester2\1011\lab4\main.cpp(16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Lab4.vcxproj -> C:\Users\crizz\Documents\GBC\Semester2\1011\Lab4\Debug\Lab4.exe

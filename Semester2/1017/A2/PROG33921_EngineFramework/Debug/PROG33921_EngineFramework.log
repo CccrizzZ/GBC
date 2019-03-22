@@ -1,8 +1,1 @@
-﻿  AudioManager.cpp
-  Button.cpp
-  FSM.cpp
-  Game.cpp
-  Main.cpp
-  Sprites.cpp
-  Generating Code...
-LINK : fatal error LNK1104: cannot open file 'SDL2_ttf.lib'
+﻿  PROG33921_EngineFramework.vcxproj -> C:\Users\crizz\Documents\GBC\Semester2\1017\A2\Debug\GAME1017_SpaceRunner.exe
