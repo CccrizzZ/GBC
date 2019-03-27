@@ -1,9 +1,2 @@
-﻿  AudioManager.cpp
-  Button.cpp
-  FSM.cpp
-  Game.cpp
-  Main.cpp
-  Sprites.cpp
-  Generating Code...
-  LINK : C:\Users\101193350\Desktop\GAME1017_A2_StartProject\Debug\GAME1017_SpaceRunner.exe not found or not built by the last incremental link; performing full link
-  PROG33921_EngineFramework.vcxproj -> C:\Users\101193350\Desktop\GAME1017_A2_StartProject\Debug\GAME1017_SpaceRunner.exe
+﻿  Sprites.cpp
+  PROG33921_EngineFramework.vcxproj -> C:\Users\101193350\Desktop\GBC\Semester2\1017\A2\Debug\GAME1017_SpaceRunner.exe

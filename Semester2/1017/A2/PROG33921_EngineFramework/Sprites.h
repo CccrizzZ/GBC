@@ -4,8 +4,7 @@
 #define GRAV 12.0
 using namespace std;
 
-class Sprite
-{
+class Sprite{
 protected:
 	SDL_Rect m_rSrc; // Rectangle for source pixels.
 	SDL_Rect m_rDst; // Rectangle for destination window.
@@ -16,8 +15,7 @@ public:
 	SDL_Rect* GetDstP() { return &m_rDst; }
 };
 
-class AnimatedSprite : public Sprite
-{
+class AnimatedSprite : public Sprite{
 protected:
 	int m_iSprite = 0,	// Which sprite to display for animation.
 		m_iSpriteMax,	// How many sprites total.
@@ -30,8 +28,7 @@ public:
 	void Animate();
 };
 
-class Player : public AnimatedSprite
-{
+class Player : public AnimatedSprite{
 private:
 	bool m_bGrounded;
 	double m_dAccelX;
@@ -58,8 +55,7 @@ public:
 	void SetVelY(double v) { m_dVelY = v; }
 	void SetX(int y) { m_rDst.x = y; }
 	void SetY(int y) { m_rDst.y = y; }
-	void Stop()
-	{
+	void Stop(){
 		m_dVelY = 0.0;
 		m_dVelX = 0.0;
 	}
@@ -67,8 +63,7 @@ public:
 	void Update();
 };
 
-class Background : public Sprite
-{
+class Background : public Sprite{
 private:
 	int m_iSpeed; // Scroll speed of background.
 public:
@@ -77,8 +72,7 @@ public:
 };
 
 // Changing Platform to Obstacle
-class Obstacle
-{
+class Obstacle{
 private:
 	Sprite* m_pSprite; // Only used for initialized obstacles.
 	bool m_bIsPlatform; // Is it a platform or an instadeath hazard.
@@ -86,8 +80,7 @@ private:
 	int m_iX; // X coordinate.
 	// Angle - could make it public...
 public:
-	Obstacle(int, bool = false, SDL_Rect = {0,0,0,0},
-		SDL_Rect = {0,0,0,0}, bool = false, bool = false);
+	Obstacle(int, bool = false, SDL_Rect = {0,0,0,0}, SDL_Rect = {0,0,0,0}, bool = false, bool = false);
 	~Obstacle();
 	int GetX() { return m_iX; }
 	bool IsPlatform() { return m_bIsPlatform; } // Make sure to set ground object to true.
