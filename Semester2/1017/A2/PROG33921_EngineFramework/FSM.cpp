@@ -21,21 +21,36 @@ void State::RenderFont(bool r, const char* c, int x, int y){
 	SDL_RenderCopy(Game::Instance()->GetRenderer(), m_pFontText, 0, &m_rFontRect);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Begin TitleState
 void TitleState::Enter(){
 	cout << "Entering Title..." << endl;
 	Game::Instance()->SetLeftMouse(false);
-	// Create buttons
 	m_vButtons.push_back(new Button("Img/play.png", { 0,0,400,100 }, { 312,200,400,100 }));
 	m_vButtons.push_back(new Button("Img/exit.png", { 0,0,400,100 }, { 312,400,400,100 }));
 }
 
 void TitleState::Update(){
 	// Update buttons. Allows for mouseovers.
-	for (int i = 0; i < (int)m_vButtons.size(); i++){
+	for (int i = 0; i < (int)m_vButtons.size(); i++)
 		m_vButtons[i]->Update();
-	}
-
 	// Parse buttons. Make sure buttons are in an if..else structure.
 	if (m_vButtons[btn::play]->Clicked()){
 		Game::Instance()->GetFSM()->ChangeState(new GameState());
@@ -86,7 +101,6 @@ void TitleState::Exit(){
 
 
 
-
 // Begin GameState
 void GameState::Enter(){
 	cout << "Entering Game..." << endl;
@@ -94,42 +108,81 @@ void GameState::Enter(){
 	Game::Instance()->GetAM()->PlayMusic();
 	m_Font = TTF_OpenFont("Img/LTYPE.TTF", 20);
 	//m_pPlayer = new Player(480, 352);
+	SDL_Surface* pBGSurface = IMG_Load("Img/Backgrounds.png");
+	m_pBGTexture = SDL_CreateTextureFromSurface(Game::Instance()->GetRenderer(), pBGSurface);
+	SDL_FreeSurface(pBGSurface);
 }
 
 void GameState::Update(){
-
-	// Press p to go into pause state
 	if (Game::Instance()->KeyDown(SDL_SCANCODE_P) == 1){
 		Game::Instance()->GetFSM()->PushState(new PauseState());
 		return;
 	}
-
 	m_iTimeCtr++;
+	// Scroll the backgrounds.
+	for (int i = 0; i < 2; i++){
+		m_Backgrounds[i].Update();
+	}
+	for (int i = 0; i < 5; i++){
+		m_Midgrounds[i].Update();
+	}
+	for (int i = 0; i < 3; i++){
+		m_Foregrounds[i].Update();
+	}
+	// The next bit shifts the background images back.
+	if (m_Backgrounds[0].GetDstP()->x <= -(m_Backgrounds[0].GetDstP()->w)){
+		for (int i = 0; i < 2; i++){
+			m_Backgrounds[i].GetDstP()->x += m_Backgrounds[i].GetDstP()->w;
+		}
+	}
+	if (m_Midgrounds[0].GetDstP()->x <= -(m_Midgrounds[0].GetDstP()->w)){
+		for (int i = 0; i < 5; i++){
+			m_Midgrounds[i].GetDstP()->x += m_Midgrounds[i].GetDstP()->w;
+		}
+	}
+	if (m_Foregrounds[0].GetDstP()->x <= -(m_Foregrounds[0].GetDstP()->w)){
+		for (int i = 0; i < 3; i++){
+			m_Foregrounds[i].GetDstP()->x += m_Foregrounds[i].GetDstP()->w;
+		}
+	}
 }
 
 void GameState::Render(){
 	cout << "Rendering Game..." << endl;
-	// Background to purple
 	SDL_SetRenderDrawColor(Game::Instance()->GetRenderer(), 255, 0, 255, 255);
 	SDL_RenderClear(Game::Instance()->GetRenderer());
+	// Render the backgrounds.
+	for (int i = 0; i < 2; i++){
+		SDL_RenderCopy(Game::Instance()->GetRenderer(), m_pBGTexture, m_Backgrounds[i].GetSrcP(), m_Backgrounds[i].GetDstP());
+	}
 
-	// Timer
+	for (int i = 0; i < 5; i++){
+		SDL_RenderCopy(Game::Instance()->GetRenderer(), m_pBGTexture, m_Midgrounds[i].GetSrcP(), m_Midgrounds[i].GetDstP());
+	}
+
+	for (int i = 0; i < 3; i++){
+		SDL_RenderCopy(Game::Instance()->GetRenderer(), m_pBGTexture, m_Foregrounds[i].GetSrcP(), m_Foregrounds[i].GetDstP());
+	}
+	// Now render the timer.
 	m_iTime =  m_iTimeCtr / 30;
 	m_sTime = "TIME: " + to_string(m_iTime);
-	// Timer UI
 	RenderFont((m_iLastTime < m_iTime?1:0), m_sTime.c_str(), 32, 50);
-	// Timer
 	m_iLastTime = m_iTime;
 	State::Render();
 }
 
-void GameState::Exit(){
+void GameState::Exit()
+{
 	cout << "Exiting Game..." << endl;
 	Game::Instance()->GetAM()->ClearMusic(); // De-allocate the music track.
 	TTF_CloseFont(m_Font);
 	SDL_DestroyTexture(m_pFontText);
+	SDL_DestroyTexture(m_pBGTexture);
 }
 // End GameState
+
+
+
 
 
 
@@ -161,10 +214,10 @@ void PauseState::Update(){
 	for (int i = 0; i < (int)m_vButtons.size(); i++){
 		m_vButtons[i]->Update();
 	}
-
 	// Parse buttons. Make sure buttons are in an if..else structure.
 	if (m_vButtons[btn::resume]->Clicked()){
 		Game::Instance()->GetFSM()->PopState();
+
 	}else if (m_vButtons[btn::exit]->Clicked()){
 		Game::Instance()->GetFSM()->Clean(); // Clear all states, including GameState on bottom.
 		Game::Instance()->GetFSM()->ChangeState(new TitleState()); // Then change to a new TitleState.
@@ -215,22 +268,17 @@ void PauseState::Exit(){
 
 
 
+
+
 // Begin LoseState
 void LoseState::Enter(){
 	cout << "Entering Lose..." << endl;
-	// Create buttons
 	m_vButtons.push_back(new Button("Img/exit.png", { 0,0,400,100 }, { 412,400,200,80 }));
-
-	// Load music and play it
 	Game::Instance()->GetAM()->LoadMusic("Aud/lose.mp3");
 	Game::Instance()->GetAM()->PlayMusic();
-
 	m_Font = TTF_OpenFont("Img/LTYPE.TTF", 40);
-
-
+	// Do the font stuff once, so Render() only needs to invoke SDL_RenderCopy().
 	m_sTime = "YOU CRASHED! FINAL TIME: " + m_sTime;
-
-	// Losestate text
 	SDL_Color textColor = { 255, 255, 255, 0 }; // White text.
 	SDL_Surface* fontSurf = TTF_RenderText_Solid(m_Font, m_sTime.c_str(), textColor);
 	m_pFontText = SDL_CreateTextureFromSurface(Game::Instance()->GetRenderer(), fontSurf);
@@ -243,7 +291,6 @@ void LoseState::Update(){
 	for (int i = 0; i < (int)m_vButtons.size(); i++){
 		m_vButtons[i]->Update();
 	}
-
 	// Parse buttons. Make sure buttons are in an if..else structure.
 	if (m_vButtons[btn::exit]->Clicked()){
 		Game::Instance()->GetFSM()->Clean(); // Clear all states, including GameState on bottom.
@@ -253,31 +300,20 @@ void LoseState::Update(){
 
 void LoseState::Render(){
 	cout << "Rendering Lose..." << endl;
-
-	// Background to red
 	SDL_SetRenderDrawColor(Game::Instance()->GetRenderer(), 255, 0, 0, 255);
 	SDL_RenderClear(Game::Instance()->GetRenderer());
-
-	// Render buttons
 	for (int i = 0; i < (int)m_vButtons.size(); i++){
 		m_vButtons[i]->Render();
 	}
-
-	// Render text UI
 	SDL_RenderCopy(Game::Instance()->GetRenderer(), m_pFontText, 0, &m_rFontRect);
 	State::Render();
 }
 
 void LoseState::Exit(){
 	cout << "Exiting Lose..." << endl;
-
-	// De-allocate the music track.
-	Game::Instance()->GetAM()->ClearMusic();
-	// Clean font
+	Game::Instance()->GetAM()->ClearMusic(); // De-allocate the music track.
 	TTF_CloseFont(m_Font);
 	SDL_DestroyTexture(m_pFontText);
-
-	// Clean buttons
 	for (int i = 0; i < (int)m_vButtons.size(); i++){
 		delete m_vButtons[i];
 		m_vButtons[i] = nullptr;
@@ -307,9 +343,17 @@ void LoseState::Exit(){
 
 
 
+
+
+
+
+
+
+
+
 // Begin StateMachine
 void StateMachine::Update(){
-	if (!m_vStates.empty()){
+	if (!m_vStates.empty()) {
 		m_vStates.back()->Update();
 	}
 }
@@ -321,16 +365,16 @@ void StateMachine::Render(){
 }
 
 void StateMachine::PushState(State* pState){
-	m_vStates.push_back(pState);
+	m_vStates.push_back(pState); // push_back() is a method of the vector type.
 	m_vStates.back()->Enter();
 }
 
 void StateMachine::ChangeState(State* pState){
 	if (!m_vStates.empty()){
 		m_vStates.back()->Exit();
-		delete m_vStates.back();
-		m_vStates.back() = nullptr;
-		m_vStates.pop_back();
+		delete m_vStates.back(); // De-allocating the state in the heap.
+		m_vStates.back() = nullptr; // Nullifying pointer to the de-allocated state.
+		m_vStates.pop_back(); // Removes the now-null pointer from the vector.
 	}
 	pState->Enter();
 	m_vStates.push_back(pState);

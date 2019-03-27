@@ -40,8 +40,27 @@ class GameState : public State{
 private:
 	Player* m_pPlayer;
 	int m_iTime, m_iLastTime, m_iTimeCtr;
-
 	string m_sTime;
+	SDL_Texture* m_pBGTexture;
+
+	Background m_Backgrounds[2] = {
+		Background({0,0,1024,768},{0,0,1024,768},1),
+		Background({0,0,1024,768},{1024,0,1024,768},1)
+	};
+
+	Background m_Midgrounds[5] = {
+		Background({1024,0,256,512},{0,0,256,512},3),
+		Background({1024,0,256,512},{256,0,256,512},3),
+		Background({1024,0,256,512},{512,0,256,512},3),
+		Background({1024,0,256,512},{768,0,256,512},3),
+		Background({1024,0,256,512},{1024,0,256,512},3)
+	};
+
+	Background m_Foregrounds[3] = {
+		Background({1024,512,512,256},{0,512,512,256},4),
+		Background({1024,512,512,256},{512,512,512,256},4),
+		Background({1024,512,512,256},{1024,512,512,256},4)
+	};
 
 public:
 	GameState() : m_iTime(0), m_iLastTime(-1),	m_iTimeCtr(0) {}

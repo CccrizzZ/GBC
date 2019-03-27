@@ -40,7 +40,7 @@ public:
 };
 
 class Player : public AnimatedSprite
-{
+{ // heavily modify this for A2 as you see fit.
 public:
 	bool m_bIsDead; // Being lazy and making this public.
 	int m_iDeathCtr;
@@ -48,15 +48,13 @@ public:
 	Player(double, double);
 	void Update();
 	void Render();
-	void Explode() { m_iFrame = m_iSprite = 0; m_rSrc.y = 64; }
 };
 
-class Asteroid : public AnimatedSprite
+class Background : public Sprite
 {
 private:
-	double m_dRotSpeed; // Rotation speed.
+	int m_iSpeed; // Scroll speed of background.
 public:
-	Asteroid(double, double, double, double);
-	void Update();
-	double GetRotSpeed() { return m_dRotSpeed; }
+	Background(SDL_Rect s, SDL_Rect d, int spd):Sprite(s, d), m_iSpeed(spd) {}
+	void Update() { m_rDst.x -= m_iSpeed; }
 };

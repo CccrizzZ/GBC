@@ -1,17 +1,9 @@
 #include "Game.h"
 
 int main(int argc, char* args[]){
-	if (Game::Instance()->Init(
-		"SDL Space Runner",
-		SDL_WINDOWPOS_CENTERED,
-		SDL_WINDOWPOS_CENTERED,
-		1024,
-		768,
-		0
-	) == false){
+	if (Game::Instance()->Init("SDL Space Runner", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1024, 768, 0) == false){
 		return 1;
 	}
-
 
 	while (Game::Instance()->Running()){
 		Game::Instance()->HandleEvents();

@@ -5,77 +5,58 @@
 using namespace std;
 using namespace chrono;
 
-Game* Game::Instance()
-{
+Game* Game::Instance(){
 	static Game* instance = new Game();
 	return instance;
 }
 
-bool Game::Init(const char* title, const int xpos, const int ypos, 
-			    const int width, const int height, const int flags)
-{
+bool Game::Init(const char* title, const int xpos, const int ypos, const int width, const int height, const int flags){
 	// Attempt to initialize SDL.
-	if (SDL_Init(SDL_INIT_EVERYTHING) == 0) // 0 is error code meaning success.
-	{
+	if (SDL_Init(SDL_INIT_EVERYTHING) == 0){
 		cout << "SDL init success!" << endl;
 		// Initialize the window
 		m_pWindow = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
-		if (m_pWindow != nullptr) // Window init success. 
-		{
+		if (m_pWindow != nullptr) {
 			cout << "Window creation successful!" << endl;
 			m_pRenderer = SDL_CreateRenderer(m_pWindow, -1, 0);
-			if (m_pRenderer != nullptr) // Renderer init success. 
-			{
+			if (m_pRenderer != nullptr){
 				SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "best");
 				cout << "Renderer creation success!" << endl;
-				if (IMG_Init(IMG_INIT_PNG) != 0)
-				{
+				if (IMG_Init(IMG_INIT_PNG) != 0){
 					// Nothing needed for images right now.
 					cout << "Image creation success!" << endl;
 					m_pSprSurf = IMG_Load("Img/sprites.png");
 					m_pSprText = SDL_CreateTextureFromSurface(m_pRenderer, m_pSprSurf);
 					SDL_FreeSurface(m_pSprSurf);
-					if (Mix_Init(MIX_INIT_MP3) != 0) // Mixer init success.
-					{
+					if (Mix_Init(MIX_INIT_MP3) != 0) {
 						Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 4096);
 						Mix_AllocateChannels(16);
 						cout << "Mixer creation success!" << endl;
-						if (TTF_Init() == 0) // Font init success.
+						if (TTF_Init() == 0){
 							cout << "Font init success!" << endl;
-						else
-						{
+						}else{
 							cout << "Font init fail!" << endl;
 							return false; // Font init fail.
 						}
-					}
-					else
-					{
+					}else{
 						cout << "Mixer init fail!" << endl;
 						return false; // Mixer init fail.
 					}
-				}
-				else
-				{
+				}else{
 					cout << "Image init fail!" << endl;
 					return false;// Image init fail.
 				}
-			}
-			else
-			{
+			}else{
 				cout << "Renderer init fail!" << endl;
-				return false; // Renderer init fail. 
+				return false; // Renderer init fail.
 			}
-		}
-		else
-		{
+		}else{
 			cout << "Window init fail!" << endl;
-			return false; // Window init fail. 
+			return false; // Window init fail.
 		}
-	}
-	else
-	{
+	}else{
 		cout << "SDL init fail!" << endl;
-		return false; // SDL init fail. 
+		return false; // SDL init fail.
 	}
 	srand((unsigned)time(NULL));
 	m_iKeystates = SDL_GetKeyboardState(nullptr);
@@ -88,50 +69,43 @@ bool Game::Init(const char* title, const int xpos, const int ypos,
 	return true;
 }
 
-bool Game::Running()
-{
+bool Game::Running(){
 	return m_bRunning;
 }
 
-bool Game::KeyDown(SDL_Scancode c)
-{
-	if (m_iKeystates != nullptr)
-	{
-		if (m_iKeystates[c] == 1)
+bool Game::KeyDown(SDL_Scancode c){
+	if (m_iKeystates != nullptr){
+		if (m_iKeystates[c] == 1){
 			return true;
-		else
+		}else{
 			return false;
+		}
 	}
 	return false;
 }
 
-bool Game::Tick()
-{
+bool Game::Tick(){
 	auto duration = steady_clock::now().time_since_epoch();
 	auto count = duration_cast<microseconds>(duration).count();
 	int tick = 1000000 / FPS;
-	if (count % tick < 100) // Margin of error for modulus.
-	{
-		if (m_bGotTick == false) // Drops potential duplicate frames.
+	if (count % tick < 100) {
+		if (m_bGotTick == false){
 			m_bGotTick = true;
+		}
 	}
 	else m_bGotTick = false;
 	return m_bGotTick;
 }
 
-void Game::Update()
-{
+void Game::Update(){
 	GetFSM()->Update(); // Invokes the update of the state machine.
 }
 
-void Game::HandleEvents()
-{
+void Game::HandleEvents(){
 	SDL_Event event;
 
-	while (SDL_PollEvent(&event)) // SDL_PollEvent invokes SDL_PumpEvents().
-	{
-		switch (event.type)
-		{
+	while (SDL_PollEvent(&event)) {
+		switch (event.type){
 		case SDL_QUIT:
 			m_bRunning = false;
 			break;
@@ -150,13 +124,11 @@ void Game::HandleEvents()
 	}
 }
 
-void Game::Render()
-{
+void Game::Render(){
 	GetFSM()->Render();
 }
 
-void Game::Clean()
-{
+void Game::Clean(){
 	cout << "Cleaning game. Bye!" << endl;
 	delete m_pFSM; // Force StateMachine to destruct.
 	delete m_pAM;  // Force AudioManager to destruct.
