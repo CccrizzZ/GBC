@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "SDL.h"
+#define GRAV 12.0
 using namespace std;
 
 class Sprite
@@ -22,32 +23,48 @@ protected:
 		m_iSpriteMax,	// How many sprites total.
 		m_iFrame = 0,	// Frame counter.
 		m_iFrameMax;	// Number of frames per sprite.
-	double m_X,		// X coordinate. 
-		m_Y,		// Y coordinate.
-		m_dSpeed,	// Speed in pixels to move per change.
-		m_dRadius,	// Radius of sprite's circle bound.
-		m_dAngle;	// Angle of sprite.
 
 public:
-	AnimatedSprite(double, double, double, int, int, double, SDL_Rect, SDL_Rect); // Constructor.
+	AnimatedSprite(SDL_Rect, SDL_Rect); // Constructor.
 	virtual void Update() = 0;
 	void Animate();
-	virtual void Render();
-	void UpdateDst();
-	double GetRadius() { return m_dRadius; }
-	double GetX() { return m_X; }
-	double GetY() { return m_Y; }
 };
 
 class Player : public AnimatedSprite
-{ // heavily modify this for A2 as you see fit.
+{
+private:
+	bool m_bGrounded;
+	double m_dAccelX;
+	double m_dMaxAccelX;
+	double m_dAccelY;
+	double m_dVelX;
+	double m_dMaxVelX;
+	double m_dVelY;
+	double m_dMaxVelY;
+	double m_dDrag;
+	double m_dGrav;
+	int m_iDir; // Direction. -1 or 1.
 public:
-	bool m_bIsDead; // Being lazy and making this public.
-	int m_iDeathCtr;
-	int m_iDeathCtrMax;
-	Player(double, double);
+	Player(SDL_Rect, SDL_Rect);
+	void SetDir(int dir);
+	void SetAccelX(double a) { m_dAccelX = a; }
+	void SetAccelY(double a) { m_dAccelY = a; }
+	void SetGravity(double a) { m_dGrav = a; }
+	bool IsGrounded() { return m_bGrounded && (m_dVelY == 0); }
+	void SetGrounded(bool g) { m_bGrounded = g; }
+	double GetVelX() { return m_dVelX; }
+	double GetVelY() { return m_dVelY; }
+	void SetVelX(double v) { m_dVelX = v; }
+	void SetVelY(double v) { m_dVelY = v; }
+	void SetX(int y) { m_rDst.x = y; }
+	void SetY(int y) { m_rDst.y = y; }
+	void Stop()
+	{
+		m_dVelY = 0.0;
+		m_dVelX = 0.0;
+	}
+	void MoveX();
 	void Update();
-	void Render();
 };
 
 class Background : public Sprite
@@ -57,4 +74,24 @@ private:
 public:
 	Background(SDL_Rect s, SDL_Rect d, int spd):Sprite(s, d), m_iSpeed(spd) {}
 	void Update() { m_rDst.x -= m_iSpeed; }
+};
+
+// Changing Platform to Obstacle
+class Obstacle
+{
+private:
+	Sprite* m_pSprite; // Only used for initialized obstacles.
+	bool m_bIsPlatform; // Is it a platform or an instadeath hazard.
+	bool m_bRotates; // Does the hazard rotate.
+	int m_iX; // X coordinate.
+	// Angle - could make it public...
+public:
+	Obstacle(int, bool = false, SDL_Rect = {0,0,0,0},
+		SDL_Rect = {0,0,0,0}, bool = false, bool = false);
+	~Obstacle();
+	int GetX() { return m_iX; }
+	bool IsPlatform() { return m_bIsPlatform; } // Make sure to set ground object to true.
+	Sprite* GetSprite() { return m_pSprite; }
+	//void Update();
+	bool Rotates() { return m_bRotates; }
 };

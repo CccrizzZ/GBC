@@ -2,11 +2,10 @@
 #include <cmath>	 // For cos/sin.
 #include "Game.h"
 #include "Sprites.h"
+
 using namespace std;
 
-AnimatedSprite::AnimatedSprite(double x, double y, double a, int fm, int sm, double spd,
-	SDL_Rect s, SDL_Rect d): Sprite(s, d), m_X(x), m_Y(y), m_dAngle(a), m_iFrameMax(fm),
-	m_iSpriteMax(sm), m_dSpeed(spd) {}
+AnimatedSprite::AnimatedSprite(SDL_Rect s, SDL_Rect d): Sprite(s, d) {}
 
 void AnimatedSprite::Animate()
 {
@@ -17,45 +16,62 @@ void AnimatedSprite::Animate()
 		m_iSprite++;
 		if (m_iSprite == m_iSpriteMax)
 		{
-			m_iSprite = 0;
-			if (m_rSrc.y == 64)
-				m_rSrc.y = -64;
+			m_iSprite = 0; // 0 will be replaced with m_iSpriteMin
 		}
 	}
 }
 
-void AnimatedSprite::Render(){
-	SDL_RenderCopyEx(Game::Instance()->GetRenderer(), Game::Instance()->GetSprTexture(), &m_rSrc, &m_rDst, m_dAngle, nullptr, SDL_FLIP_NONE);
+Player::Player(SDL_Rect s, SDL_Rect d):AnimatedSprite(s,d)
+{
+	m_bGrounded = false;
+	m_dAccelX = m_dAccelY = m_dVelX = m_dVelY = 0.0;
+	m_dGrav = GRAV;
+	m_dMaxAccelX = 2.0;
+	m_dMaxVelX = 6.0;
+	m_dMaxVelY = m_dGrav;
+	m_dDrag = 0.925;
+	m_iDir = 1;
 }
 
-void AnimatedSprite::UpdateDst(){
-	m_rDst.x = (int)(m_X - m_rDst.w / 2);
-	m_rDst.y = (int)(m_Y - m_rDst.h / 2);
+void Player::SetDir(int dir)
+{ // Will be used to set direction of sprite. Just added it for you.
+	m_iDir = dir;
 }
 
-Player::Player(double x, double y) : AnimatedSprite(x+32, y+32, 90, 3, 4, 6.0f, { 0, 0, 64, 64 }, { (int)x, (int)y, 64, 64 }){
-	m_bIsDead = false;
-	m_iDeathCtr = 0;
-	m_iDeathCtrMax = 60;
-	m_dRadius = 18;
+void Player::MoveX()
+{
+	m_dAccelX += 0.25 * m_iDir; // Change to speed var.
 }
 
-void Player::Update(){
-	this->Animate();
-	m_rSrc.x = m_rSrc.w * m_iSprite; // Update animation.
-	if (m_bIsDead)
-		return;
-	if (Game::Instance()->KeyDown(SDL_SCANCODE_A) && m_X > 32)
-		m_X -= m_dSpeed;
-	else if (Game::Instance()->KeyDown(SDL_SCANCODE_D) && m_X < 992)
-		m_X += m_dSpeed;
-	if (Game::Instance()->KeyDown(SDL_SCANCODE_W))
-		m_Y -= m_dSpeed;
-	else if (Game::Instance()->KeyDown(SDL_SCANCODE_S))
-		m_Y += m_dSpeed;
-	this->UpdateDst(); // Send x and y to dest rectangle.
+void Player::Update()
+{
+	m_dAccelX = min(max(m_dAccelX, -(m_dMaxAccelX)), (m_dMaxAccelX));
+	m_dVelX = (m_dVelX + m_dAccelX) * m_dDrag;
+	m_dVelX = min(max(m_dVelX, -(m_dMaxVelX)), (m_dMaxVelX));
+	m_rDst.x += (int)m_dVelX;
+	m_rDst.x = min(max(m_rDst.x, 0), 1024-128);
+	m_dVelY += m_dAccelY + m_dGrav/7;
+	m_dVelY = min(max(m_dVelY, -(m_dMaxVelY * 10)), (m_dMaxVelY));
+	m_rDst.y += (int)m_dVelY;
 }
 
-void Player::Render(){
-	this->AnimatedSprite::Render(); // Invoking base class Render().
+Obstacle::Obstacle(int x, bool b, SDL_Rect src, 
+	SDL_Rect dst, bool p, bool r)
+{
+	m_iX = x;
+	if (b) // Construct the Sprite
+	{
+		m_pSprite = new Sprite(src,dst);
+		m_bIsPlatform = p;
+		m_bRotates = r;
+	}
+}
+
+Obstacle::~Obstacle()
+{
+	if (m_pSprite != nullptr)
+	{
+		delete m_pSprite;
+		m_pSprite = nullptr;
+	}
 }

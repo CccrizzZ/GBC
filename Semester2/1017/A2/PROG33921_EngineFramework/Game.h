@@ -6,6 +6,7 @@
 #include "SDL_image.h"
 #include "SDL_mixer.h"
 #include "SDL_ttf.h"
+#define FPS 60
 using namespace std;
 
 class Game
@@ -13,6 +14,7 @@ class Game
 private:
 	bool m_bRunning;
 	bool m_bGotTick;
+	bool m_bSpaceOk;
 	bool m_bLeftMouse = false; // Keeps track of left mouse button state.
 	int m_iMouseX, m_iMouseY;  // Variables to hold mouse positions.
 	const Uint8* m_iKeystates;
@@ -22,7 +24,7 @@ private:
 	SDL_Renderer* m_pRenderer;
 	AudioManager* m_pAM;
 	StateMachine* m_pFSM; // Pointer to the StateMachine object created dynamically.
-	Game() :m_bRunning(false), m_bGotTick(false) {}
+	Game() :m_bRunning(false), m_bGotTick(false), m_bSpaceOk(true) {}
 
 public:
 	static Game* Instance();
@@ -45,4 +47,6 @@ public:
 	void HandleEvents();
 	void Render();
 	void Clean();
+	bool GetSpaceOk() { return m_bSpaceOk; }
+	void SetSpaceOk(bool b) { m_bSpaceOk = b; }
 };

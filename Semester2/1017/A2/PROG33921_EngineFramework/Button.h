@@ -1,7 +1,8 @@
 #pragma once
 #include "SDL.h"
 
-class Button{
+class Button
+{
 private:
 	enum state { MOUSE_UP, MOUSE_OVER, MOUSE_DOWN };
 	bool m_bReleased;
