@@ -22,7 +22,7 @@ void Game::Preparation(){
   cout << "You lives in LA, you were ordered by government to evacuate in 3 month." << '\n';
   cout << "Government predicted the virus will reach LA in 3 month." << '\n' << '\n';
 
-  cout << "You planned to move to Florida in the end of second month." << '\n';
+  cout << "You planned to move to Southern Baja in the end of second month." << '\n';
   cout << "You have 2 month to prepare for your trip, what are you gona do?" << '\n' << '\n';
 
   cout << "Enter \'weapon and food\' to prepare for weapon and food" << '\n';
@@ -127,7 +127,7 @@ void Game::OutOfTown(){
 // Take them out
 void Game::GasStationLoot(){
   cout << '\n' << "--------------------" << '\n';
-  cout << "Gas Station" << '\n';
+  cout << "Mexican Gas Station" << '\n';
   cout << "--------------------" << '\n' << '\n';
 
   cout << "You arrived at a gas station out of town, there is a truck parking outside with battery on." << '\n';
@@ -186,7 +186,7 @@ void Game::Arrival(){
   cout << "Arrival" << '\n';
   cout << "--------------------" << '\n' << '\n';
 
-  cout << "You finaly made it to Florida!" << '\n';
+  cout << "You finaly made it to Southern Baja!" << '\n';
   cout << "But your advanture just begun." << '\n';
   cout << '\n' << '\n' << "-----------The-End------------" << '\n' << '\n';
 
@@ -203,7 +203,10 @@ void Game::RedAlarm(){
   cout << "RedAlarm" << '\n';
   cout << "--------------------" << '\n' << '\n';
 
+  cout << "For some reason, someone brought the virus into the city before government's prediction." << '\n';
   cout << "Since the army are ordered to kill all civilians onsight," << '\n';
+  cout << "Now you have to worry about both armies and zombies" << '\n' << '\n';
+
   cout << "You decided to ride a bike instead of driving a car." << '\n';
   cout << "You avoided all major highways and take coutry roads." << '\n' << '\n';
 
@@ -251,14 +254,14 @@ void Game::RedAlarm(){
 // Leave
 void Game::Barn() {
   cout << '\n' << "--------------------" << '\n';
-  cout << "Barn" << '\n';
+  cout << "Barn at San Diego" << '\n';
   cout << "--------------------" << '\n' << '\n';
 
   cout << "There is nobody here, you looted food and gas." << '\n';
   cout << "When You try to leave the barn, you hear something scratching the bathroom door from inside." << '\n';
   cout << "What are you gona do?" << '\n' << '\n';
 
-  cout << "Enter \'open the door\' to go inside and loot the place again." << '\n';
+  cout << "Enter \'open the door\' to open the bathroom door." << '\n';
   cout << "Enter \'leave the barn\' to walk away." << '\n'<< '\n';
 
 
@@ -306,7 +309,7 @@ void Game::Barn() {
 // Stay in supermarket *
 void Game::Supermarket(){
   cout << '\n' << "--------------------" << '\n';
-  cout << "Supermarket" << '\n';
+  cout << "Mexican Supermarket" << '\n';
   cout << "--------------------" << '\n' << '\n';
 
   cout << "You arrived at a abandoned supermarket out at no where." << '\n';

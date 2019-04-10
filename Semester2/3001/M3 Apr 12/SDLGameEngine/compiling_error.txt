@@ -1,7 +1,0 @@
-In file included from C:\Users\crizz\Documents\GBC\Semester2\3001\M2-3001-due march 4\SDLGameEngine\Renderer.h:3:0,
-                 from C:\Users\crizz\Documents\GBC\Semester2\3001\M2-3001-due march 4\SDLGameEngine\SpriteRenderer.h:2,
-                 from C:\Users\crizz\Documents\GBC\Semester2\3001\M2-3001-due march 4\SDLGameEngine\Scene1.cpp:6:
-C:\Users\crizz\Documents\GBC\Semester2\3001\M2-3001-due march 4\SDLGameEngine\Texture.h:3:23: fatal error: SDL_image.h: No such file or directory
- #include <SDL_image.h>
-                       ^
-compilation terminated.

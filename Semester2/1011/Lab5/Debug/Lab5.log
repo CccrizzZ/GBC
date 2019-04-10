@@ -1,0 +1,3 @@
+﻿  main.cpp
+main.obj : error LNK2019: unresolved external symbol "public: void __thiscall DynStack<int>::push(int)" (?push@?$DynStack@H@@QAEXH@Z) referenced in function _main
+C:\Users\crizz\Documents\GBC\Semester2\1011\Lab5\Debug\Lab5.exe : fatal error LNK1120: 1 unresolved externals
