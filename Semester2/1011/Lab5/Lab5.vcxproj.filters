@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DynQueue.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DynStack.cpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
