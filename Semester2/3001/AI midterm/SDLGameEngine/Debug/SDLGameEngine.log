@@ -1,10 +1,148 @@
-﻿  MidtermScene.cpp
+﻿  Align.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\align.cpp(19): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\align.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\align.cpp(26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\align.cpp(56): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Arrive.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\arrive.cpp(21): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Behaviour.cpp
+  BoxCollider.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\boxcollider.cpp(67): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\boxcollider.cpp(75): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\boxcollider.cpp(76): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\boxcollider.cpp(77): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\boxcollider.cpp(78): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Bullet.cpp
+  Camera.cpp
+  CameraFollow.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\camerafollow.cpp(18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\camerafollow.cpp(19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  ChangeColor.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\changecolor.h(15): warning C4309: 'argument': truncation of constant value
+  Collider.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\collider.cpp(109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\collider.cpp(110): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Collision.cpp
+  Color.cpp
+  Component.cpp
+  ContactListener.cpp
+  Enemy.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\enemy.cpp(31): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+  Flee.cpp
+  MidtermGame.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\changecolor.h(15): warning C4309: 'argument': truncation of constant value
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\midtermgame.cpp(122): warning C4309: 'argument': truncation of constant value
+  MidtermScene.cpp
+  MoveInCircle.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\moveincircle.cpp(26): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+  ObstacleAvoidance.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\obstacleavoidance.cpp(41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\obstacleavoidance.cpp(42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   PathFollowing.cpp
 c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\pathfollowing.cpp(22): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\pathfollowing.cpp(80): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  Compiling...
+  PlayerControls.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\playercontrols.cpp(43): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+  Pursue.cpp
+  Ray.cpp
+  RaycastHit.cpp
   Scene1.cpp
 c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\scene1.cpp(100): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  Seek.cpp
+  Shoot.cpp
   Shooter.cpp
 c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\shooter.cpp(84): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  SimpleEvent.cpp
+  SimpleEventListener.cpp
+  Game.cpp
+  GameObject.cpp
+  Input.cpp
+  LayerdStorage.cpp
+  main.cpp
+  Module.cpp
+  Physics.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\physics.cpp(94): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\physics.cpp(95): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Rect.cpp
+  Renderer.cpp
+  RenderModule.cpp
   Generating Code...
-  SDLGameEngine.vcxproj -> C:\Users\crizz\Documents\GBC\Semester2\3001\AI midterm\Debug\SDLGameEngine.exe
+  Compiling...
+  Rigidbody.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\rigidbody.cpp(46): warning C4244: '=': conversion from 'double' to 'float32', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\rigidbody.cpp(118): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\rigidbody.cpp(200): warning C4244: 'argument': conversion from 'double' to 'float32', possible loss of data
+  Scene.cpp
+  Sprite.cpp
+  SpriteRenderer.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\spriterenderer.cpp(57): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\spriterenderer.cpp(58): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\spriterenderer.cpp(59): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\spriterenderer.cpp(60): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\spriterenderer.cpp(61): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\spriterenderer.cpp(62): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  SteeringAgent.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\steeringagent.cpp(48): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\steeringagent.cpp(52): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  SteeringBehaviour.cpp
+  TextRenderer.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\textrenderer.cpp(49): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\textrenderer.cpp(50): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\textrenderer.cpp(51): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\textrenderer.cpp(52): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\textrenderer.cpp(53): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\textrenderer.cpp(54): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  Time.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\time.cpp(35): warning C4244: '=': conversion from '_Rep' to 'float', possible loss of data
+          with
+          [
+              _Rep=double
+          ]
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\time.cpp(73): warning C4244: 'return': conversion from '_Rep' to 'const float', possible loss of data
+          with
+          [
+              _Rep=double
+          ]
+  Transform.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\transform.cpp(35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\transform.cpp(74): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\transform.cpp(93): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\transform.cpp(267): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\transform.cpp(273): warning C4244: 'initializing': conversion from 'double' to 'const float', possible loss of data
+  UpdateTarget.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\updatetarget.cpp(25): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\updatetarget.cpp(26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  UpdateVectorTarget.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\updatevectortarget.cpp(29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\updatevectortarget.cpp(30): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\updatevectortarget.cpp(35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Vector2.cpp
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\vector2.cpp(16): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\vector2.cpp(18): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\vector2.cpp(49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\time.cpp(73): warning C4172: returning address of local variable or temporary
+c:\users\crizz\documents\gbc\semester2\3001\ai midterm\sdlgameengine\rigidbody.cpp(83): warning C4715: 'Rigidbody::ConvertToB2Type': not all control paths return a value
+BoxCollider.obj : error LNK2001: unresolved external symbol "public: virtual class b2Shape * __thiscall b2PolygonShape::Clone(class b2BlockAllocator *)const " (?Clone@b2PolygonShape@@UBEPAVb2Shape@@PAVb2BlockAllocator@@@Z)
+BoxCollider.obj : error LNK2001: unresolved external symbol "public: virtual int __thiscall b2PolygonShape::GetChildCount(void)const " (?GetChildCount@b2PolygonShape@@UBEHXZ)
+BoxCollider.obj : error LNK2019: unresolved external symbol "public: void __thiscall b2PolygonShape::SetAsBox(float,float,struct b2Vec2 const &,float)" (?SetAsBox@b2PolygonShape@@QAEXMMABUb2Vec2@@M@Z) referenced in function "private: virtual void __thiscall BoxCollider::SetFixtureDef(void)" (?SetFixtureDef@BoxCollider@@EAEXXZ)
+BoxCollider.obj : error LNK2001: unresolved external symbol "public: virtual bool __thiscall b2PolygonShape::TestPoint(struct b2Transform const &,struct b2Vec2 const &)const " (?TestPoint@b2PolygonShape@@UBE_NABUb2Transform@@ABUb2Vec2@@@Z)
+BoxCollider.obj : error LNK2001: unresolved external symbol "public: virtual bool __thiscall b2PolygonShape::RayCast(struct b2RayCastOutput *,struct b2RayCastInput const &,struct b2Transform const &,int)const " (?RayCast@b2PolygonShape@@UBE_NPAUb2RayCastOutput@@ABUb2RayCastInput@@ABUb2Transform@@H@Z)
+BoxCollider.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall b2PolygonShape::ComputeAABB(struct b2AABB *,struct b2Transform const &,int)const " (?ComputeAABB@b2PolygonShape@@UBEXPAUb2AABB@@ABUb2Transform@@H@Z)
+BoxCollider.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall b2PolygonShape::ComputeMass(struct b2MassData *,float)const " (?ComputeMass@b2PolygonShape@@UBEXPAUb2MassData@@M@Z)
+Collider.obj : error LNK2019: unresolved external symbol "public: void __thiscall b2Fixture::SetSensor(bool)" (?SetSensor@b2Fixture@@QAEX_N@Z) referenced in function "public: void __thiscall Collider::SetTrigger(bool)" (?SetTrigger@Collider@@QAEX_N@Z)
+Collider.obj : error LNK2019: unresolved external symbol "public: void __thiscall b2Fixture::SetFilterData(struct b2Filter const &)" (?SetFilterData@b2Fixture@@QAEXABUb2Filter@@@Z) referenced in function "public: void __thiscall Collider::SetCategory(unsigned short)" (?SetCategory@Collider@@QAEXG@Z)
+ContactListener.obj : error LNK2019: unresolved external symbol "public: void __thiscall b2WorldManifold::Initialize(struct b2Manifold const *,struct b2Transform const &,float,struct b2Transform const &,float)" (?Initialize@b2WorldManifold@@QAEXPBUb2Manifold@@ABUb2Transform@@M1M@Z) referenced in function "public: void __thiscall b2Contact::GetWorldManifold(struct b2WorldManifold *)const " (?GetWorldManifold@b2Contact@@QBEXPAUb2WorldManifold@@@Z)
+Physics.obj : error LNK2019: unresolved external symbol "public: __thiscall b2World::b2World(struct b2Vec2 const &)" (??0b2World@@QAE@ABUb2Vec2@@@Z) referenced in function "public: __thiscall Physics::Physics(void)" (??0Physics@@QAE@XZ)
+Physics.obj : error LNK2019: unresolved external symbol "public: __thiscall b2World::~b2World(void)" (??1b2World@@QAE@XZ) referenced in function "public: __thiscall Physics::~Physics(void)" (??1Physics@@QAE@XZ)
+Physics.obj : error LNK2019: unresolved external symbol "public: void __thiscall b2World::SetContactListener(class b2ContactListener *)" (?SetContactListener@b2World@@QAEXPAVb2ContactListener@@@Z) referenced in function "public: void __thiscall Physics::Start(void)" (?Start@Physics@@QAEXXZ)
+Physics.obj : error LNK2019: unresolved external symbol "public: void __thiscall b2World::Step(float,int,int)" (?Step@b2World@@QAEXMHH@Z) referenced in function "public: void __thiscall Physics::FixedUpdate(void)" (?FixedUpdate@Physics@@QAEXXZ)
+Rigidbody.obj : error LNK2019: unresolved external symbol "public: class b2Fixture * __thiscall b2Body::CreateFixture(struct b2FixtureDef const *)" (?CreateFixture@b2Body@@QAEPAVb2Fixture@@PBUb2FixtureDef@@@Z) referenced in function "public: void __thiscall Rigidbody::AddCollider(class Collider *)" (?AddCollider@Rigidbody@@QAEXPAVCollider@@@Z)
+Rigidbody.obj : error LNK2019: unresolved external symbol "public: void __thiscall b2Body::DestroyFixture(class b2Fixture *)" (?DestroyFixture@b2Body@@QAEXPAVb2Fixture@@@Z) referenced in function "public: void __thiscall Rigidbody::RemoveCollider(class Collider *)" (?RemoveCollider@Rigidbody@@QAEXPAVCollider@@@Z)
+Rigidbody.obj : error LNK2019: unresolved external symbol "public: void __thiscall b2Body::SetTransform(struct b2Vec2 const &,float)" (?SetTransform@b2Body@@QAEXABUb2Vec2@@M@Z) referenced in function "private: void __thiscall Rigidbody::UpdatePhysicsTransform(class TransformData const &)" (?UpdatePhysicsTransform@Rigidbody@@AAEXABVTransformData@@@Z)
+Rigidbody.obj : error LNK2019: unresolved external symbol "public: void __thiscall b2Body::SetMassData(struct b2MassData const *)" (?SetMassData@b2Body@@QAEXPBUb2MassData@@@Z) referenced in function "public: void __thiscall Rigidbody::SetMass(float)" (?SetMass@Rigidbody@@QAEXM@Z)
+Rigidbody.obj : error LNK2019: unresolved external symbol "public: void __thiscall b2Body::SetType(enum b2BodyType)" (?SetType@b2Body@@QAEXW4b2BodyType@@@Z) referenced in function "public: void __thiscall Rigidbody::SetBodyType(enum Rigidbody::bodyType const &)" (?SetBodyType@Rigidbody@@QAEXABW4bodyType@1@@Z)
+Rigidbody.obj : error LNK2019: unresolved external symbol "public: class b2Body * __thiscall b2World::CreateBody(struct b2BodyDef const *)" (?CreateBody@b2World@@QAEPAVb2Body@@PBUb2BodyDef@@@Z) referenced in function "public: virtual void __thiscall Rigidbody::Awake(void)" (?Awake@Rigidbody@@UAEXXZ)
+C:\Users\crizz\Documents\GBC\Semester2\3001\AI midterm\Debug\SDLGameEngine.exe : fatal error LNK1120: 20 unresolved externals

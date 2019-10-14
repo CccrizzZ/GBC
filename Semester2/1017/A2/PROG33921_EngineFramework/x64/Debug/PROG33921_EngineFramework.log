@@ -1,4 +1,5 @@
-﻿  Button.cpp
+﻿  AudioManager.cpp
+  Button.cpp
   FSM.cpp
   Game.cpp
   Main.cpp

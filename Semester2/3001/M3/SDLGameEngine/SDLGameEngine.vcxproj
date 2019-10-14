@@ -83,11 +83,11 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\SDL\SDL2_mixer-2.0.4\include;C:\Box2D\include;C:\SDL\SDL2_image-2.0.4\include;C:\SDL\SDL2_mixer-2.0.4\include;C:\SDL\SDL2_ttf-2.0.15\include;C:\SDL\SDL2-2.0.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\SDL\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>Box2D.lib;SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\SDL\SDL2_mixer-2.0.4\lib\x86;C:\Box2D\lib;C:\SDL\SDL2_image-2.0.4\lib\x86;C:\SDL\SDL2_mixer-2.0.4\lib\x86;C:\SDL\SDL2_ttf-2.0.15\lib\x86;C:\SDL\SDL2-2.0.8\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.\SDL\lib\x86</AdditionalLibraryDirectories>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>

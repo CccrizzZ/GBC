@@ -1,0 +1,4 @@
+﻿  pch.cpp
+  Lab3.cpp
+c:\users\crizz\documents\gbc\semester2\1011\lab3\lab3.cpp(15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Lab3.vcxproj -> C:\Users\crizz\Documents\GBC\Semester2\1011\Lab3\x64\Debug\Lab3.exe
